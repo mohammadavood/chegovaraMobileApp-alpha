@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">oL0HqfhM6GGFUedBEQb4E63DR5mtSJ3DEN4TX</string>
     <string name="app_name">chegovaraa</string>
 </resources>
