@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "305564291069",
+    "firebase_url": "https://chegovara-87433.firebaseio.com",
+    "project_id": "chegovara-87433",
+    "storage_bucket": "chegovara-87433.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305564291069:android:82b086a1fce389ed",
+        "android_client_info": {
+          "package_name": "com.chegovaraa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305564291069-n3iudfpfqq9vt4oii7cc097ft25ng2mp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-_-wuHATGd-6fTlFzDEcDh4yo7bYvR7c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
