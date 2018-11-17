@@ -152,6 +152,8 @@ android {
 }
 
 dependencies {
+    compile project(':appcenter-push')
+    compile project(':appcenter')
     compile project(':react-native-code-push')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
