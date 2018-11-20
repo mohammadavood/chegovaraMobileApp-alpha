@@ -152,6 +152,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-push-notification')
     compile project(':appcenter-push')
     compile project(':appcenter')
     compile project(':react-native-code-push')
@@ -168,3 +169,4 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 apply plugin: 'com.google.gms.google-services'
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
