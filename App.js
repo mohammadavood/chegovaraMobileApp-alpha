@@ -21,11 +21,17 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+let notification = false
 class App extends Component<Props> {
   render() {
+    if(notification ===false){
+      configure()
+      localNotification()
+      notification = true
+    }
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.welcome}>aWelcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
@@ -72,6 +78,57 @@ Push.setListener({
     }
   }
 });
+//--------------------------
+
+
+import PushNotification from 'react-native-push-notification';
+import { PushNotificationIOS } from 'react-native';
+
+const configure = () => {
+ PushNotification.configure({
+
+   onRegister: function(token) {
+     //process token
+   },
+
+   onNotification: function(notification) {
+     // process the notification
+     // required on iOS only
+     notification.finish(PushNotificationIOS.FetchResult.NoData);
+   },
+
+   permissions: {
+     alert: true,
+     badge: true,
+     sound: true
+   },
+
+   popInitialNotification: true,
+   requestPermissions: true,
+
+ });
+};
+
+const localNotification = () => {
+  PushNotification.localNotification({
+    autoCancel: true,
+    largeIcon: "ic_launcher",
+    smallIcon: "ic_notification",
+    bigText: "My big text that will be shown when notification is expanded",
+    subText: "This is a subText",
+    color: "green",
+    vibrate: true,
+    vibration: 300,
+    title: "Notification Title",
+    message: "Notification Message",
+    playSound: true,
+    soundName: 'default',
+    actions: '["Accept", "Reject"]',
+  });
+ };
+
+
+
 
 
 
