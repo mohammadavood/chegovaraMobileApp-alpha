@@ -6,7 +6,6 @@
  */
 
 #import "AppDelegate.h"
-#import <AppCenterReactNativePush/AppCenterReactNativePush.h>
 #import <AppCenterReactNative/AppCenterReactNative.h>
 #import <CodePush/CodePush.h>
 
@@ -19,7 +18,6 @@
 {
   NSURL *jsCodeLocation;
 
-  [AppCenterReactNativePush register];  // Initialize AppCenter push
 
   [AppCenterReactNative register];  // Initialize AppCenter 
 

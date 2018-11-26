@@ -7,10 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,AppState} from 'react-native';
-
+import {Platform, StyleSheet, Text, View,PushNotificationIOS} from 'react-native';
 import codePush from 'react-native-code-push';
-import Push from 'appcenter-push'
+import PushNotification from 'react-native-push-notification';
 
 
 const instructions = Platform.select({
@@ -21,14 +20,8 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-let notification = false
 class App extends Component<Props> {
   render() {
-    if(notification ===false){
-      configure()
-      localNotification()
-      notification = true
-    }
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>aWelcome to React Native!</Text>
@@ -44,45 +37,6 @@ class App extends Component<Props> {
 const codePushWrapped = codePush(App)
 export default codePushWrapped
 //---------------------------
-
-Push.setListener({
-  onPushNotificationReceived: function (pushNotification) {
-    let message = pushNotification.message;
-    let title = pushNotification.title;
-    console.log('notif received in main func---------------------------------------------------')
-    console.log("pushNotification  :  ",pushNotification )
-    if (message === null) {
-      // Android messages received in the background don't include a message. On Android, that fact can be used to
-      // check if the message was received in the background or foreground. For iOS the message is always present.
-      title = 'Android background';
-      message = '<empty>';
-      console.log('notif received in null---------------------------------------------------')
-    }
-
-    // Custom name/value pairs set in the App Center web portal are in customProperties
-    if (pushNotification.customProperties && Object.keys(pushNotification.customProperties).length > 0) {
-      message += '\nCustom properties:\n' + JSON.stringify(pushNotification.customProperties);
-      console.log('notif received in custom prop---------------------------------------------------')
-    }
-
-    if (AppState.currentState === 'active') {
-      Alert.alert(title, message);
-      console.log('notif received in forground---------------------------------------------------')
-    }
-    else {
-      console.log('notif received in background--------------------------------------------------')
-      // Sometimes the push callback is received shortly before the app is fully active in the foreground.
-      // In this case you'll want to save off the notification info and wait until the app is fully shown
-      // in the foreground before displaying any UI. You could use AppState.addEventListener to be notified
-      // when the app is fully in the foreground.
-    }
-  }
-});
-//--------------------------
-
-
-import PushNotification from 'react-native-push-notification';
-import { PushNotificationIOS } from 'react-native';
 
 const configure = () => {
  PushNotification.configure({

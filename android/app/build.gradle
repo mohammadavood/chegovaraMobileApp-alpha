@@ -153,7 +153,6 @@ android {
 
 dependencies {
     compile project(':react-native-push-notification')
-    compile project(':appcenter-push')
     compile project(':appcenter')
     compile project(':react-native-code-push')
     implementation fileTree(dir: "libs", include: ["*.jar"])
