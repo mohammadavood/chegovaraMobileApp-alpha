@@ -10,7 +10,16 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,PushNotificationIOS} from 'react-native';
 import codePush from 'react-native-code-push';
 import PushNotification from 'react-native-push-notification';
+// firebase.crashlytics().crash()
+// import firebase from 'react-native-firebase';
 
+// firebase.auth()
+//   .signInAnonymously()
+//   .then(credential => {
+//     if (credential) {
+//       console.log('default app user ->', credential.user.toJSON());
+//     }
+//   });
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
