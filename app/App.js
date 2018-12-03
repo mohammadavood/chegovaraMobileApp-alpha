@@ -10,8 +10,8 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,PushNotificationIOS} from 'react-native';
 import codePush from 'react-native-code-push';
 import PushNotification from 'react-native-push-notification';
+import firebase from 'react-native-firebase';
 // firebase.crashlytics().crash()
-// import firebase from 'react-native-firebase';
 
 // firebase.auth()
 //   .signInAnonymously()

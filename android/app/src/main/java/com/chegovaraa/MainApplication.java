@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import io.invertase.firebase.RNFirebasePackage;
-import io.invertase.firebase.RNFirebasePackage;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage;
 import com.microsoft.codepush.react.CodePush;
@@ -12,6 +11,8 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import io.invertase.firebase.fabric.crashlytics.RNFirebaseCrashlyticsPackage;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,7 +38,9 @@ public class MainApplication extends Application implements ReactApplication {
           new RNFirebasePackage(),
           new ReactNativePushNotificationPackage(),
           new AppCenterReactNativePackage(MainApplication.this),
-          new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG)
+          new CodePush(getResources().getString(R.string.reactNativeCodePush_androidDeploymentKey), getApplicationContext(), BuildConfig.DEBUG),
+          new RNFirebaseCrashlyticsPackage()
+          
       );
     }
 
